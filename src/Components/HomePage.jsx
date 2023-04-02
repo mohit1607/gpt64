@@ -126,7 +126,12 @@ const HomePage = () => {
     return (
         <div className='flex h-[100vh] w-[100%]'>
             <Sidebar></Sidebar>
-            <main className='bg-[#343541] w-full relative'>
+            <main className='bg-[#343541] w-full relative text-center'>
+                {
+                    (!chatFeed[0]) && <div className='h-[100vh] text-center w-full text-6xl font-semibold text-[#40414F] flex items-center justify-center' >
+                        Welcome to GPT 64
+                    </div>
+                }
                 <div className='absolute overflow-auto h-[100%] w-full' ref={scrollRef}>
                     {
                         chatFeed.map((curr, index) => {
